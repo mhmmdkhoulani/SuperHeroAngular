@@ -6,7 +6,7 @@ namespace SuperHero.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SuperHeorsController : ControllerBase
+    public class SuperHerosController : ControllerBase
     {
         [HttpGet]
         public async Task<ActionResult<List<SuperHeroModel>>> GetSuperHeros()
