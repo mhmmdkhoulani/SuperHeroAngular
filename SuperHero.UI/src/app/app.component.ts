@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SuperHero } from './models/super-hero';
 import { SuperHeroService } from './services/super-hero.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +9,5 @@ import { SuperHeroService } from './services/super-hero.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'SuperHero.UI';
-  heros: SuperHero[] = [];
 
-  constructor(private service: SuperHeroService) {
-
-  }
-  ngOnInit(): void {
-    this.service.getSuperHeros().subscribe((result: SuperHero[]) => this.heros = result);
-  }
 }

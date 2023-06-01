@@ -15,4 +15,23 @@ export class SuperHeroService {
 
     return this.http.get<SuperHero[]>(this.url);
   }
+
+  getSuperHero(id: number): Observable<SuperHero> {
+
+    return this.http.get<SuperHero>(this.url + `/${id}`);
+  }
+
+  updateSuperHero(hero: SuperHero): Observable<SuperHero[]> {
+    return this.http.put<SuperHero[]>(this.url, hero);
+  }
+
+  addSuperHero(hero: SuperHero): Observable<SuperHero[]> {
+    return this.http.post<SuperHero[]>(this.url, hero);
+  }
+
+  deleteSuperHero(id: any) {
+    return this.http.delete(this.url + `/${id}`);
+  }
+
+
 }

@@ -26,6 +26,20 @@ namespace SuperHero.Api.Controllers
             return heros;
         }
 
+        [HttpGet("{id}")]
+        public async Task<ActionResult<SuperHeroModel>> GetSuperHero(int id)
+        {
+            var hero = await _db.SuperHeros.FindAsync(id);
+            if (hero == null)
+                return BadRequest("Hero not found.");
+
+
+            return Ok(hero);
+
+            
+        }
+
+
         [HttpPost]
         public async Task<ActionResult<List<SuperHeroModel>>> CreateSuperHero( SuperHeroModel model) 
         {
